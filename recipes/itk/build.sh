@@ -14,4 +14,5 @@ cmake \
 	-DCMAKE_INSTALL_PREFIX=$PREFIX \
 	..
 
-make -j2 install
+make -j2
+make install > /dev/null
