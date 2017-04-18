@@ -10,7 +10,7 @@ source:
 
 build:
   number: 0
-  # skip: true  # [(win and py27) or win32]
+  skip: true  # [win]
 
 requirements:
   build:
@@ -19,15 +19,15 @@ requirements:
     - expat
     - hdf5 1.8.17|1.8.17.*
     - jpeg
-    - png
-    - tiff
+    - libpng
+    - libtiff
     - zlib
   run:
     - expat
     - hdf5 1.8.17|1.8.17.*
     - jpeg
-    - png
-    - tiff
+    - libpng
+    - libtiff
     - zlib
 
 test:
