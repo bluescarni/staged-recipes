@@ -10,7 +10,8 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
+  msvc_compiler: 14.0  # [win]
+  #skip: true  # [win]
 
 requirements:
   build:
