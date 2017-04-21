@@ -10,11 +10,16 @@ source:
 
 build:
   number: 0
-  msvc_compiler: 14.0  # [win]
-  #skip: true  # [win]
+  skip: True  # [win and py<34]
+  features:
+    - vc10  # [win and py34]
+    - vc14  # [win and py>=35]
 
 requirements:
   build:
+    - python                # [win]
+    - vc 10                 # [win and py34]
+    - vc 14                 # [win and py>=35]
     - toolchain
     - cmake
     - expat
@@ -24,6 +29,8 @@ requirements:
     - libtiff
     - zlib
   run:
+    - vc 10                     # [win and py34]
+    - vc 14                     # [win and py>=35]
     - expat
     - hdf5 1.8.17|1.8.17.*
     - jpeg
@@ -33,8 +40,8 @@ requirements:
 
 test:
   commands:
-    - test -d $PREFIX/include/ITK*               # [unix]
-    # - if not exist %LIBRARY_INC%\\pagmo\\pagmo.hpp exit 1   # [win]
+    - test -d $PREFIX/include/ITK*                        # [unix]
+    - if not exist %LIBRARY_INC%\\include\\ITK* exit 1    # [win]
 
 about:
   home: https://itk.org/
