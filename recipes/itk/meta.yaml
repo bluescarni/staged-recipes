@@ -28,7 +28,6 @@ requirements:
     - libpng
     - libtiff
     - zlib
-    - gdcm
   run:
     - vc 10                     # [win and py34]
     - vc 14                     # [win and py>=35]
@@ -38,7 +37,6 @@ requirements:
     - libpng
     - libtiff
     - zlib
-    - gdcm
 
 test:
   commands:
