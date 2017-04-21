@@ -41,7 +41,7 @@ requirements:
 test:
   commands:
     - test -d $PREFIX/include/ITK*                        # [unix]
-    - if not exist %LIBRARY_INC%\\include\\ITK* exit 1    # [win]
+    - if not exist %LIBRARY_INC%\\ITK* exit 1             # [win]
 
 about:
   home: https://itk.org/
